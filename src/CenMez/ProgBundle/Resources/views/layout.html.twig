@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Sigaind - {% block title %}Bienvenido{% endblock %}</title>
+        <link rel="icon" sizes="16x16" href="{{ asset('favicon.ico') }}" />
+        <link href="{{ asset('bundles/sigaind/css/style.css') }}" rel="stylesheet" type="text/css" />
+        
+        {% block head %}
+        {% endblock %}        
+    </head>
+    <body>        
+        {% block menu %}
+        {% endblock %}
+        <div id="symfony-wrapper">
+            <div class="symfony-content">                    
+                {% block content %}
+                {% endblock %}
+            </div>          
+        </div>
+    </body>
+</html>

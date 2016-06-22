@@ -1,0 +1,386 @@
+<ul class="menu" id="menu">
+    <li>
+      
+    <a class="menulink" href="#"> Maestros </a>
+    <ul>
+        <li>
+        <a class="menulink" href="#"> Sanidad Vegetal</a>            
+            <ul>
+            <li> <a class="menulink" href="#" > Enfermedades </a> 
+                <ul>
+                <li><a class="menulink" href="{{ path('maestro_enfermedades') }}" >Enfermedades</a></li>
+                <li><a class="menulink" href="{{ path('maestro_estado_enfermedades') }}" > Estados</a></li>
+                </ul>
+            </li>
+            <li><a class="menulink" href="#">Plagas</a>
+                <ul>
+                <li><a class="menulink" href="{{ path('maestro_tipo_plagas')}}" >Tipos de Plagas</a></li>
+                <li><a class="menulink" href="{{ path('maestro_plagas_index')}}" >Plagas</a></li>
+                <li><a class="menulink" href="{{ path('maestro_estados_plagas_index')}}">Estados</a></li>
+                <li></li>
+                </ul>
+            </li>
+            <li><a class="menulink" href="#">Rhynchophorus</a>
+                <ul>
+                    <li><a class="menulink" href="{{ path('maestro_trampas_rhynchophorus_index')}}" >Trampas</a></li>
+                    <li><a class="menulink" href="{{ path('maestro_tipos_cebos_index')}}" >Tipo Cebos</a></li>
+                </ul>
+            </li>
+            <li><a class="menulink" href="#">General</a>
+                <ul>
+                    <li><a class="menulink" href="{{ path('maestro_causas_erradicacion_index')}}" >Causas Erradicación</a></li>                                               
+                </ul>
+            </li>
+        </ul>
+    </li>    
+    <li>
+        <a class="menulink" href="#"> Agronom&iacute;a</a>
+            <ul>
+                <li> <a class="menulink" href="#" > Plantaci&oacute;n </a> 
+                    <ul>
+                        <li><a class="menulink" href="{{ path('maestro_zonas_plantacion_index') }}" >Zonas</a></li>                        
+                        <li><a class="menulink" href="{{ path('maestro_materiales_index') }}" > Materiales</a></li>
+                        <li><a class="menulink" href="{{ path('maestro_siembras_index') }}" > Siembras</a></li>
+                        <li><a class="menulink" href="{{ path('maestro_lotes') }}" > Lotes</a></li>
+                    </ul>
+                </li>
+                <li><a class="menulink" href="#">Labores</a>
+                    <ul>
+                    <li><a class="menulink" href="{{ path('maestro_tipo_labores_index')}}" >Tipo Labores</a></li>
+                    <li><a class="menulink" href="{{ path('maestro_labores_index')}}" >Labores</a></li>
+                    <li><a class="menulink" href="{{ path('maestro_categorias_pago')}}">Categor&iacute;a de Pago</a></li>
+                    <li></li>
+                    </ul>
+                </li>
+            <li><a class="menulink" href="{{ path('maestro_unidad_medida_index') }}">Unidades Medida</a> </li>
+            <li><a class="menulink" href="{{ path('maestro_vehiculos_index') }}">Veh&iacute;culos</a> </li>
+            <li><a class="menulink" href="{{ path('maestro_supervisor_por_zona_index') }}" > Supervisores por Zona</a></li>
+        </ul>
+    </li>
+        <li>
+            <a class="menulink" href="#"> Recurso Humano</a>            
+                <ul>                                        
+                <li><a class="menulink" href="{{ path('maestro_tipo_empresas_index') }}">Tipo Empresas</a> </li>
+                <li><a class="menulink" href="{{ path('maestro_empresas_contratistas_index') }}">Contratistas</a> </li>
+                <li><a class="menulink" href="{{ path('cargos_trabajadores_index') }}">Cargos</a> </li>
+                <li><a class="menulink" href="{{ path('maestro_trabajadores_index') }}">Trabajadores</a> </li>
+                <li><a class="menulink" href="{{ path('maestro_tipo_novedades_index') }}">Tipo Novedades</a> </li>
+                <li><a class="menulink" href="{{ path('maestro_centros_de_costos_index') }}">Centros de Costo</a> </li>
+                <li><a class="menulink" href="{{ path('maestro_dias_festivos_index') }}">Días Festivos</a> </li>
+            </ul>
+        </li>
+        <li>
+            <a class="menulink" href="#"> Almac&eacute;n</a>            
+                <ul>                                        
+                <li><a class="menulink" href="{{ path('maestro_productos') }}">Productos Almac&eacute;n</a> </li>
+                <li><a class="menulink" href="{{ path('maestro_TipoDocumentoAlmacen') }}">Tipo Documentos</a> </li>
+                <li><a class="menulink" href="{{ path('maestro_TipoMovimientosAlmacen') }}">Tipo Movimientos</a> </li>
+            </ul>
+        </li>
+        <li>
+            <a class="menulink" href="#"> Cliente</a>            
+                <ul>                                        
+                <li><a class="menulink" href="{{ path('maestro_clientes_index') }}">Cliente</a> </li>                
+            </ul>
+        </li>
+        <li>
+            <a class="menulink" href="#">Seguridad</a>            
+                <ul>                                        
+                <li><a class="menulink" href="{{ path('registro_usuarios') }}">Usuarios</a> </li>
+                <li><a class="menulink" href="{{ path('index_grupos') }}">Grupos</a> </li>
+            </ul>
+        </li>
+        <li>
+            <a class="menulink" href="#">Parametrización</a>            
+                <ul>                                        
+                <li><a class="menulink" href="{{ path('parametrizacion_variables') }}">Variables del sistema</a> </li>
+            </ul>
+        </li>
+    </ul>
+    </li>
+    <li>
+        <a class="menulink" href="#"> Operacionales </a>
+        <ul>
+            <li>
+                <a class="menulink" href="#"> Agronom&iacute;a</a>            
+                <ul> 
+                    
+                    <li><a class="menulink" href="#">Programaci&oacute;n de Labores</a> 
+                        <ul>
+                            <li><a class="menulink" href="{{ path('programacion_labores_mtto_sanidad') }}">Mantenimiento/ Sanidad</a> </li>
+                            <li><a class="menulink" href="{{ path('programacion_labores_cosecha') }}">Cosecha</a> </li>
+                            <li><a class="menulink" href="{{ path('programacion_labores_obras_civies') }}">Obras Contratistas</a> </li>
+                        </ul>
+                    </li>
+                    
+                    <li><a class="menulink" href="{{ path('index_ordenes_agronomia') }}">Ordenes Agronom&iacute;a</a> </li>
+                    <li><a class="menulink" href="{{ path('lista_ordenesagronomia_aprobar') }}">Aprobar Orden Agronom&iacute;a</a> </li>
+                    <li><a class="menulink" href="{{ path('lista_laboresSinAprobar_reportadas') }}">Labores Sin Aprobar</a> </li>
+                    <li><a class="menulink" href="{{ path('view_labores_reportadas') }}">Labores Aprobadas</a> </li>                        
+                    <li><a class="menulink" href="{{ path('agroquimicos_reportados') }}">Aqroqu&iacute;micos Reportados</a> </li>
+                    <li><a class="menulink" href="{{ path('reporte_labores_con_orden_index') }}">Reporte de labores</a> </li>
+            </ul>
+        </li>
+        <li>
+            <a class="menulink" href="#">Producción</a>            
+                <ul>
+                    <li><a class="menulink" href="{{ path('valor_fruto') }}"> Valor Fruto</a></li>
+                    <li><a class="menulink" href="{{ path('tiquete_cosecha') }}"> Tiquete Cosecha </a></li>
+                    <li><a class="menulink" href="{{ path('remisiones_de_fruto_index') }}"> Remisiones de fruto </a></li>
+                    <li><a class="menulink" href="{{ path('censo_produccion_detallado') }}"> Censo Producción </a></li>
+                    <li><a class="menulink" href="{{ path('presupuesto_produccion_index') }}">Presupuesto Producci&oacute;n</a> </li>
+            </ul>
+        </li>
+        <li>
+            <a class="menulink" href="#">Sanidad Vegetal</a>            
+                <ul>
+                    <li><a class="menulink" href="{{ path('erradicar_palmas') }}">Palmas erradicadas</a> </li>
+                    <li><a class="menulink" href="{{ path('censo_plagas_index') }}">Censo de plagas</a> </li>
+                    <li><a class="menulink" href="{{ path('censo_enfermedades_index') }}">Censo Enfermedades</a> </li>
+                    <li><a class="menulink" href="{{ path('censo_rhynchophorus_index') }}">Censo Rhynchophorus</a> </li>
+            </ul>
+        </li>
+            <li>
+                <a class="menulink" href="#"> Recurso Humano</a>            
+                <ul>
+                    <li><a class="menulink" href="{{ path('operacional_novedades_trabajador_index') }}">Novedades Trabajador</a> </li>
+                    <li><a class="menulink" href="{{ path('prenomina_liquidacion') }}">Liquidacion Labores</a> </li> 
+                    <li><a class="menulink" href="{{ path('reversar_liquidacion') }}">Reversar Liquidacion</a> </li>                        
+                </ul>
+            </li>            
+            <li>
+                <a class="menulink" href="#"> Almac&eacute;n</a>            
+                <ul>
+                    <li><a class="menulink" href="{{ path('entrada_almacen') }}"> Entrada Almac&eacute;n </a></li>
+                    <li><a class="menulink" href="{{ path('salida_almacen') }}"> Salida Almac&eacute;n </a></li>
+                    <li><a class="menulink" href="{{ path('otros_movimientos_almacen') }}"> Otros Movimientos </a></li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+    <li>
+        <a class="menulink" href="#"> Informes </a>
+        <ul>
+            <li>
+                <a class="menulink" href="#"> RRHH</a>            
+                    <ul>
+                    <li>
+                        <a class="menulink" href="#"> Pren&oacute;mina</a>            
+                        <ul>                            
+                            <li><a class="menulink" href="{{ path('prenomina') }}">Pren&oacute;mina</a> </li>
+                            <li><a class="menulink" href="{{ path('prenomina_trabajador') }}">Pren&oacute;mina Trabajador</a> </li>
+                            <li><a class="menulink" href="{{ path('prenomina_comparativa_labores') }}">Comparativa Labores</a> </li>
+                            <li><a class="menulink" href="{{ path('total_labor_prenomina') }}">Total por labor</a> </li>
+                            
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="menulink" href="#"> N&oacute;mina</a>            
+                        <ul>
+                            <li><a class="menulink" href="{{ path('nomina') }}">N&oacute;mina</a> </li>
+                            <li><a class="menulink" href="{{ path('nomina_trabajador') }}">N&oacute;mina Trabajador</a> </li>
+                            <li><a class="menulink" href="{{ path('comparativa_labores') }}">Comparativa Labores</a> </li>
+                            <li><a class="menulink" href="{{ path('total_labor') }}">Total por Labor</a> </li>
+                            <li><a class="menulink" href="{{ path('liquidacion_contratista') }}">Liquidacion de Labor por Contratista</a> </li>
+                        </ul>  
+                    </li>                                   
+                </ul>
+            </li>
+            <li>
+                <a class="menulink" href="#"> Agronom&iacute;a</a>            
+                    <ul>
+                        <li><a class="menulink" href="#">Programaci&oacute;n de Labores</a> 
+                            <ul>
+                                <li><a class="menulink" href="{{ path('programacion_labores_consulta_fecha') }}">Informe por día</a> </li>
+                                <li><a   href="{{ path('programacion_labores_por_supervisor') }}">Programación por supervisor</a> </li>
+                            </ul>
+                        </li>
+                        
+                        <li><a class="menulink" href="{{ path('labores_por_trabajador') }}">Labores Por Trabajador</a> </li>
+                        <li><a class="menulink" href="{{ path('rendimiento_labor') }}">Rendimiento por labor</a> </li>
+                        <li><a class="menulink" href="{{ path('informes_labores_programadas') }}">Evaluación Programacion de labores</a> </li>
+                        <li><a class="menulink" href="{{ path('labor_siembra') }}">Labores Por Siembra</a> </li>
+                        <li><a class="menulink" href="{{ path('labor_lote') }}">Labores Por Lote</a> </li>
+                        <li><a class="menulink" href="{{ path('lote_siembra_lista') }}">Lotes Por Siembra</a> </li>
+                        <li><a class="menulink" href="{{ path('labor_programada') }}">Labores Programadas</a> </li>                    
+                        <li><a class="menulink" href="{{ path('estadistica_fertilizante') }}">Estadistica Fertilizante Aplicado</a> </li>
+                        <li><a class="menulink" href="{{ path('ciclo_labores') }}">Ciclo Labores</a> </li>
+                        <li><a class="menulink" href="{{ path('detalle_general_por_lote') }}">Detalle Por Lote</a> </li>
+                        <li>
+                            <a class="menulink" href="#">Estadisticas</a>
+                            <ul>
+                                <li><a class="menulink" href="{{ path('estadisticas_podas') }}">Poda</a> </li>
+                                <li><a class="menulink" href="{{ path('estadisticas_fertilizacion') }}">Fertilización</a> </li>
+                                <li><a class="menulink" href="{{ path('estadisticas_otras_labores') }}">Otras Labores</a> </li>
+                            </ul>
+                        </li>
+                </ul>
+            </li>
+            <li>
+                <a class="menulink" href="#">Sanidad Vegetal</a>            
+                    <ul>                                        
+                        <li>
+                            <a class="menulink" href="#"> Erradicadas</a>
+                            <ul>
+                                    <li><a class="menulink" href="{{ path('erradicacion_palma') }}">Listado Palmas erradicadas</a> </li>
+                                    <li><a class="menulink" href="{{ path('erradicacion_lote') }}">Palmas erradicadas por Lote</a> </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a class="menulink" href="#"> Enfermedad</a>
+                            <ul>
+                                <li><a class="menulink" href="{{ path('enfermedad_linea_palma') }}">Enfermedad Linea-Palma</a> </li>
+                                <li><a class="menulink" href="{{ path('enfermedad_lote') }}">Enfermedad por Lote</a> </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a class="menulink" href="#"> Plagas</a>
+                            <ul>
+                                <li><a class="menulink" href="{{ path('plaga_palma') }}">Plaga por Palma</a> </li>
+                                <li><a class="menulink" href="{{ path('plaga_lote') }}">Plaga por Lote</a> </li>
+                                <li><a class="menulink" href="{{ path('comportamiento_plagas_index') }}">Comportamiento Plagas</a> </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a class="menulink" href="#"> Rhynchophorus</a>
+                            <ul>
+                                <li><a class="menulink" href="{{ path('rhynchophorus') }}">Rhynchophorus Trampa</a> </li>
+                                <li><a class="menulink" href="{{ path('rhynchophorus_lote') }}">Rhynchophorus Lote</a> </li>
+                            </ul>
+                        </li>
+                </ul>
+            </li>
+            <li>
+                <a class="menulink" href="#"> Producci&oacute;n</a>            
+                    <ul>
+                    <li>
+                        <a class="menulink" href="#"> Revisión Tiquetes</a>            
+                        <ul>                            
+                            <li><a class="menulink" href="{{ path('comparativo_tiquete_labor') }}">Peso Tiquete Vs Labor</a> </li>
+                            <li><a class="menulink" href="{{ path('labores_cosecha_por_fuera_fechas_quincena') }}">Labores por fuera de fechas</a> </li>
+                            <li><a class="menulink" href="{{ path('labores_cosecha_quincena_tiquetes_pasados') }}">Labores Quincena Tiquetes pasados</a> </li>
+                        </ul>
+                    </li>
+                    <li><a class="menulink" href="{{ path('tiquete_cosecha_por_lote') }}">Detalle Tiquete por Lote</a> </li>
+                    <li><a class="menulink" href="{{ path('remisiones_de_fruto_informe') }}"> Remisiones de fruto </a></li>
+                    <li>
+                        <a class="menulink" href="#">Producci&oacute;n</a>            
+                        <ul>                            
+                            <li><a class="menulink" href="{{ path('produccion_lote') }}">Producci&oacute;n por Lote</a> </li>
+                            <li><a class="menulink" href="{{ path('produccion_siembra') }}">Producci&oacute;n por Siembra</a> </li>
+                            <li><a class="menulink" href="{{ path('produccion_tiquete') }}">Producci&oacute;n por Tiquete</a> </li>
+                            <li><a class="menulink" href="{{ path('produccion_zonas') }}">Producci&oacute;n por todas las zonas</a> </li>
+                        </ul>
+                    </li>
+                    <li><a class="menulink" href="{{ path('comportamiento_zona') }}">Comportamiento por zona</a> </li>
+                    <li><a class="menulink" href="{{ path('comparativo_zona') }}">Compartivo por zona</a> </li>
+                    <li><a class="menulink" href="{{ path('produccion_zona_mes') }}">Informe produccion por mes</a> </li>
+                    <li><a class="menulink" href="{{ path('historico_index') }}">Historico de Producci&oacute;n</a> </li>
+                    <li><a class="menulink" href="{{ path('ciclos_cosecha_index') }}">Ciclos de Cosecha</a> </li>
+                    <li><a class="menulink" href="{{ path('presupuesto_vs_real_index') }}">Producción Real Vs Presupusto</a> </li>
+                    <li><a class="menulink" href="{{ path('cosecha_por_trabajador_index') }}">Cosecha por trabajador</a> </li>
+                    <li>
+                        <a class="menulink" href="#"> Censo Producción</a>
+                        <ul>
+                            <li><a class="menulink" href="{{ path('informe_censo_produccion_por_lote') }}">Censo Producción Por Lote</a> </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a class="menulink" href="#"> Almac&eacute;n</a>            
+                    <ul>
+                        <li><a class="menulink" href="{{ path('inventario_productoquimico_lista') }}">Inventario Producto Quimico</a> </li>
+                        <li><a class="menulink" href="{{ path('fertilizante_aplicado') }}">Fertilizante Aplicado</a> </li>
+                        <li><a class="menulink" href="{{ path('Movimiento_por_producto') }}">Movimientos Por Producto</a> </li>
+                        <li><a class="menulink" href="{{ path('salida_agroquimico_vs_reportado') }}">Salidas Vs Reportado</a> </li>
+                        <li><a class="menulink" href="{{ path('listado_detalle_entradas_almacen') }}">Listado Detalle Entradas</a> </li>
+                        <li><a class="menulink" href="{{ path('listado_detalle_salidas_almacen') }}">Listado Detalle Salidas</a> </li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+    <li>
+        <a class="menulink" href="#"> Sistema Geogr&aacute;fico</a>
+        <ul>
+            <li>
+                <a class="menulink" href="#">Mapas Agronom&iacute;a</a>            
+                    <ul>                                        
+                    <li><a class="menulink" href="{{ path('lotes') }}">Lotes</a> </li>
+                    <li><a class="menulink" href="{{ path('Informe_labores_programadas_por_Lote') }}">Labores Programadas</a> </li>
+                    <li><a class="menulink" href="{{ path('lotesPorZona') }}">Lotes por Zona</a> </li>
+                    <li><a class="menulink" href="{{ path('lotesPorMaterial') }}">Lotes por material</a> </li>
+                    <li><a class="menulink" href="{{ path('lotesPorSiembra') }}">Lotes por Siembra</a> </li>
+                    <li><a class="menulink" href="{{ path('MapaPorLote') }}">Vistas por lote</a> </li>
+                    <li><a class="menulink" href="{{ path('PalmasPorLote') }}">Inventario de Palmas</a> </li>
+                    
+                </ul>
+            </li>
+            <li>
+                <a class="menulink" href="#">Mapas Sanidad</a>            
+                    <ul>                           
+                         <li>                        
+                            <a class="menulink" href="#">Enfermedad</a>
+                                <ul>
+                                    <li><a class="menulink" href="{{ path('PalmasEnfermas') }}">Enfermedad por Palma</a> </li>
+                                    <li><a class="menulink" href="{{ path('Incidencia_Enfermedad_Por_Lote') }}">Incidencia por lote</a> </li>
+                                </ul>
+                        </li>
+                         <li>                        
+                            <a class="menulink" href="#">Plagas</a>
+                                <ul>
+                                    <li><a class="menulink" href="{{ path('PalmasCensadasPlagas') }}">Palmas censadas</a> </li>
+                                    <li><a class="menulink" href="{{ path('Incidencia_Plaga_Por_Lote') }}">Incidencia por lote</a> </li>
+                                    <li><a class="menulink" href="{{ path('Estado_Plagas') }}">Estado Actual</a> </li>
+                                </ul>
+                        </li>
+                        <li><a class="menulink" href="{{ path('CensoRhynchophorus') }}">Censos Rhynchophorus</a> </li>                   
+                </ul>
+            </li>
+            <li>
+                <a class="menulink" href="#">Mapas Producci&oacute;n</a>            
+                    <ul>    
+                    <li><a class="menulink" href="{{ path('CiclosDeCosecha') }}">Ciclos de Cosecha</a> </li>
+                    <li><a class="menulink" href="{{ path('produccion_ton_ha_anno') }}">Producción Ton/Ha/Año</a> </li>
+                    <li><a class="menulink" href="{{ path('produccion_costos_ha') }}">Costos Por Ha/Año</a> </li>
+                </ul>
+            </li>
+            <li>
+                <a class="menulink" href="{{ path('Mapa_CicloRiego') }}">Ciclo Riego</a>
+            </li>
+            <li>
+                <a class="menulink" href="#">Seguimiento</a>            
+                <ul>    
+                    <li><a class="menulink" href="{{ path('rutas_trabajador') }}">Rutas Trabajadores</a> </li>
+                    <li><a class="menulink" href="{{ path('config_seguimiento_trabajador') }}">Configuraci&oacute;n</a> </li>
+                </ul>
+            </li>
+            <li>
+                <a class="menulink" href="#">Editar Cartograf&iacute;a</a>            
+                    <ul>    
+                    <li><a class="menulink" href="{{ path('EditarLotes') }}">Lotes</a> </li>
+                    <li>                        
+                        <a class="menulink" href="#">Palmas</a>
+                            <ul>
+                                <li><a class="menulink" href="{{ path('CrearPalmas') }}">Crear</a> </li>
+                                <li><a class="menulink" href="{{ path('EditarPalmas') }}">Editar</a> </li>
+                            </ul>
+                    </li>
+                    <li><a class="menulink" href="{{ path('EditarVias') }}">V&iacute;as</a> </li>
+                    <li>                        
+                        <a class="menulink" href="#">Hidrograf&iacute;a</a>
+                            <ul>
+                                <li><a class="menulink" href="{{ path('EditarDrenajes') }}">Río-Canal-Drenaje</a> </li>
+                                <li><a class="menulink" href="{{ path('EditarCuerposDeAgua') }}">Cuerpos de agua</a> </li>
+                            </ul>
+                    </li>
+                    <li><a class="menulink" href="{{ path('EditarObrasCiviles') }}">Obras Civiles</a> </li>
+                </ul>
+            </li>            
+        </ul>
+    </li>
+
+    <li>
+        <a class="menulink" href="{{ path('usuario_logout') }}"> Salir </a>    
+    </li>
+</ul>                                                                                   

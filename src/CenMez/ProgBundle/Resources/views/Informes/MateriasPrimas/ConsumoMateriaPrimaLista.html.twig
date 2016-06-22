@@ -1,0 +1,52 @@
+<script type="text/javascript">
+    $(document).ready(function() {
+           
+    });
+</script>
+
+<div class="row">
+    <div class="col-lg-6">
+        <h3 class="page-header"><span id="titulo-consulta"> </span></h3>
+    </div>
+    <!-- /.col-lg-12 -->
+</div>
+<div id="cuerpo" class="row">
+    <div class="col-lg-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <button type="button" onclick="CancelarConsultaLista()" class="btn btn-info">Cancelar</button>
+                
+            </div>
+            <div class="table-responsive">
+                <table id='demotable10' class="table table-bordered tablaFiltro table-hover">
+                    <thead>
+                        <tr class="active">
+                            <th> Materia Prima </th>            
+                            <th> Cantidad Total</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tblLabores">
+                    {% for item in datos %}
+                        <tr>
+                            <td> {{item.nombre }} </td>           
+                            <td> {{item.canttotal | number_format(0, ',', '.')}} </td> 
+                        </tr>
+                     {% else %}
+                        <tr>
+                            <td colspan="3">
+                                NO EXISTEN DATOS PARA MOSTRAR
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-12">
+        <h3 class="page-header"> </h3>
+    </div>
+</div>

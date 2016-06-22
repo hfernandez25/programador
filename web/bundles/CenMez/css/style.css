@@ -1,0 +1,510 @@
+#wrapper
+{
+    width:  100%;
+    margin: 4px;
+}
+
+.content
+{
+    background-color:           white;
+    border:                     1px solid #DFDFDF;
+    padding-left:               5px;
+    padding-right:              10px;
+    padding-top:                6px;
+    padding-bottom:             4px;
+    -moz-border-radius:         16px;
+    -webkit-border-radius:      16px;
+    border-radius:              16px;
+    margin-bottom:              5px;
+    word-wrap:                  break-word;
+}
+
+html, body
+{
+    background-color: #EFEFEF;
+}
+
+body 
+{
+    margin:15px;
+    text-align: left ;    
+    color:            #313131;
+    background-repeat: no-repeat;
+    font-family:arial;	font-size:8pt;
+}
+
+ul.menu {list-style:none; margin:0; padding:0}
+ul.menu * {margin:0; padding:0}
+ul.menu a {display:block; color:#000; text-decoration:none}
+ul.menu li {position:relative; float:left; margin-right:3px}
+ul.menu ul {position:absolute; top:26px; left:0; background:#d1d1d1; display:none; opacity:0; list-style:none}
+ul.menu ul li {position:relative; border:1px solid #aaa; border-top:none; width:148px; margin:0}
+ul.menu ul li a {display:block; padding:2px 5px 4px; background-color:#d1d1d1}
+ul.menu ul li a:hover {background-color:#c5c5c5}
+ul.menu ul ul {left:148px; top:-1px}
+ul.menu .menulink {border:1px solid #aaa; padding:5px 7px 7px; font-weight:bold; background:url(../images/header.gif); width:134px}
+ul.menu .menulink:hover, ul.menu .menuhover {background:url(../images/header_over.gif)}
+ul.menu .sub {background:#d1d1d1 url(../images/arrow.gif) 136px 8px no-repeat}
+ul.menu .topline {border-top:1px solid #aaa}
+
+.cOLOR {
+	color: #FFF;
+	text-align: center;
+	font-weight: bold;
+}
+
+#apDiv1 {
+	position:absolute;
+	left:40px;
+	top:174px;
+	width:940px;
+	height:25px;
+	z-index:1;
+}
+.Color1 {
+	color: #830483;
+}
+.forumline tbody tr .thCornerL div .Estilo6 {
+	color: #FFF;
+}
+Error {
+	font-weight: bold;
+}
+Error {
+	color: #E00;
+}
+Error {
+	font-weight: bold;
+}
+tbody tr .forumlink {
+	color: #E00;
+	text-align: justify;
+}
+/* the overlayed element */ 
+.apple_overlay { 
+     
+    /* initially overlay is hidden */ 
+    display:none; 
+     
+    /* growing background image */ 
+    background-image:url(../img/overlay/white.png); 
+     
+    /*  
+        width after the growing animation finishes 
+        height is automatically calculated 
+    */ 
+    width:640px;         
+     
+    /* some padding to layout nested elements nicely  */ 
+    padding:35px; 
+ 
+    /* a little styling */     
+    font-size:11px; 
+} 
+
+/* default close button positioned on upper right corner */ 
+.apple_overlay div.close { 
+    background-image:url(../images/close.png); 
+    position:absolute; right:5px; top:5px; 
+    cursor:pointer; 
+    height:35px; 
+    width:35px; 
+}
+  
+div.apple_overlay { 
+    background-image:url(../images/overlay_IE6.gif); 
+    color:#fff; 
+} 
+ 
+/* default close button positioned on upper right corner */ 
+div.apple_overlay div.close { 
+    background-image:url(../images/close.png); 
+ 
+}     
+div.apple_overlay.black { 
+    background-image:url(../images/transparent.png);         
+    color:#fff; 
+}
+.modal { 
+    background-color:#fff; 
+    display:none; 
+    width:580px; 
+    padding:25px; 
+    text-align:left; 
+    border:2px solid #333; 
+ 
+    opacity:1; 
+    -moz-border-radius:6px; 
+    -webkit-border-radius:6px; 
+    -moz-box-shadow: 0 0 50px #ccc; 
+    -webkit-box-shadow: 0 0 50px #ccc; 
+} 
+ 
+textarea{
+     border:1px solid #444;
+	background-color:#F8F9FA;
+	padding:5px;
+	color:#000000;
+	font-size:12px;
+	
+	/* CSS3 spicing */
+	-moz-border-radius:4px;
+	-webkit-border-radius:4px;	
+}
+
+
+
+/* input field */
+#forma input {
+	border: 1px solid #DBE1EB;
+        font-size: 11px;
+        font-family: Arial, Verdana;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        border-radius: 6px;
+        -moz-border-radius: 4px;
+        -webkit-border-radius: 4px;
+        -o-border-radius: 4px;
+        background: #FFFFFF;
+        background: linear-gradient(left, #FFFFFF, #F7F9FA);
+        background: -moz-linear-gradient(left, #FFFFFF, #F7F9FA);
+        background: -webkit-linear-gradient(left, #FFFFFF, #F7F9FA);
+        background: -o-linear-gradient(left, #FFFFFF, #F7F9FA);
+	
+}
+
+#forma input:focus 	{ color: #2E3133; border-color: #2E3133;}
+
+
+/* field label */
+label {
+	display:block;
+	font-size:11px;
+	color:#ccc;
+}
+
+#terms label {
+	float:left;
+}
+
+#terms input {
+	margin:0 5px;
+}
+
+.claTabla{
+  font-: .9em Tahoma;
+  text-align: center;
+  margin-top:-1px;
+  border:1px solid #ccc;
+  border-collapse: collapse;
+  -moz-border-radius:5px;
+  -webkit-border-radius:5px;
+  -moz-box-shadow: 0 0 15px #666;
+  -webkit-box-shadow: 0 0 15px #666;	
+
+	
+}
+
+.claTabla th, .claTabla td {
+  border: 1px solid #333;
+  line-height: 2em;
+}
+
+ 
+
+.claTabla tr:hover {
+  background: #DFEEF7 !important;
+  cursor:pointer;
+}
+
+
+strong {
+    font-family: Tahoma;
+	font-size:12px;
+}
+
+/* root element for tabs */
+ul.tabs {
+ list-style:none;
+ margin:0 !important;
+ padding:0;
+ border-bottom:1px solid #666;
+ height:30px;
+}
+
+/* single tab */
+ul.tabs li {
+ float:left;
+ text-indent:0;
+ padding:0;
+ margin:0 !important;
+ list-style-image:none !important;
+}
+
+/* link inside the tab. uses a background image */
+ul.tabs a {
+ background: url(../images/blue.png) no-repeat -420px 0;
+ font-size:11px;
+ display:block;
+ height: 30px;
+ line-height:30px;
+ width: 134px;
+ text-align:center;
+ text-decoration:none;
+ color:#333;
+ padding:0px;
+ margin:0px;
+ position:relative;
+ top:1px;
+}
+
+ul.tabs a:active {
+ outline:none;
+}
+
+/* when mouse enters the tab move the background image */
+ul.tabs a:hover {
+ background-position: -420px -31px;
+ color:#fff;
+}
+
+/* active tab uses a class name "current". its highlight is also done by moving the background image. */
+ul.tabs a.current, ul.tabs a.current:hover, ul.tabs li.current a {
+ background-position: -420px -62px;
+ cursor:default !important;
+ color:#000 !important;
+}
+
+
+strong {
+    font-family: Tahoma;
+	font-size:12px;
+}
+
+/* root element for tabs */
+ul.tabs {
+ list-style:none;
+ margin:0 !important;
+ padding:0;
+ border-bottom:1px solid #666;
+ height:30px;
+}
+
+/* single tab */
+ul.tabs li {
+ float:left;
+ text-indent:0;
+ padding:0;
+ margin:0 !important;
+ list-style-image:none !important;
+}
+
+/* link inside the tab. uses a background image */
+ul.tabs a {
+ background: url(../images/blue.png) no-repeat -420px 0;
+ font-size:11px;
+ display:block;
+ height: 30px;
+ line-height:30px;
+ width: 134px;
+ text-align:center;
+ text-decoration:none;
+ color:#333;
+ padding:0px;
+ margin:0px;
+ position:relative;
+ top:1px;
+}
+
+ul.tabs a:active {
+ outline:none;
+}
+
+/* when mouse enters the tab move the background image */
+ul.tabs a:hover {
+ background-position: -420px -31px;
+ color:#fff;
+}
+
+/* active tab uses a class name "current". its highlight is also done by moving the background image. */
+ul.tabs a.current, ul.tabs a.current:hover, ul.tabs li.current a {
+ background-position: -420px -62px;
+ cursor:default !important;
+ color:#000 !important;
+}
+
+/* Different widths for tabs: use a class name: w1, w2, w3 or w2 */
+
+/* width 1 */
+ul.tabs a.s { background-position: -553px 0; width:81px; }
+ul.tabs a.s:hover { background-position: -553px -31px; }
+ul.tabs a.s.current { background-position: -553px -62px; }
+
+/* width 2 */
+ul.tabs a.l { background-position: -248px -0px; width:174px; }
+ul.tabs a.l:hover { background-position: -248px -31px; }
+ul.tabs a.l.current { background-position: -248px -62px; }
+
+
+/* width 3 */
+ul.tabs a.xl { background-position: 0 -0px; width:248px; }
+ul.tabs a.xl:hover { background-position: 0 -31px; }
+ul.tabs a.xl.current { background-position: 0 -62px; }
+
+/* the overlayed element */
+.simple_overlay {
+	
+	/* must be initially hidden */
+	display:none;
+	
+	/* place overlay on top of other elements */
+	z-index:10000;
+
+	/* styling */
+	background-color:#333;
+	width:675px;	
+	min-height:420px;
+	border:2px solid #666;
+	
+	/* CSS3 styling for latest browsers */
+	-moz-box-shadow:0 0 90px 5px #000;
+	-webkit-box-shadow: 0 0 90px #000;	
+}
+
+
+/* close button positioned on upper right corner */
+.simple_overlay .close {
+	background-image:url(../images/close.png);
+	position:absolute;
+	right:-15px;
+	top:-15px;
+	cursor:pointer;
+	height:35px;
+	width:35px;
+}
+
+/* styling for elements inside overlay */
+	.details {
+		position:absolute;
+		top:15px;
+		right:15px;
+		font-size:11px;
+		color:#fff;
+		width:150px;
+	}
+	
+	.details h3 {
+		color:#aba;
+		font-size:15px;
+		margin:0 0 -10px 0;
+	}
+
+
+
+.apple_overlay {
+
+ /* initially overlay is hidden */
+ display:none;
+
+ /* growing background image */
+ background-image:url(../images/white.png);
+width:640px;
+padding:35px;
+ font-size:11px;
+}
+.apple_overlay .close {
+ background-image:url(images/close.png);
+position:absolute; right:5px; top:5px;
+cursor:pointer;
+height:35px;
+width:35px;
+} 
+
+.claTablaForm th, .claTabla td {
+  border: 1px solid #333;
+  line-height: 2em;
+}
+.Mensaje_Importante
+{
+  color:#FF0000;
+  font-size:12px;
+  font-family:Verdana, Arial, Helvetica, sans-serif;
+  font-weight: bold;
+}
+	
+.claTablaForm{
+  font-: .9em Tahoma;
+  text-align: center;
+  margin-top:-1px;
+  border:1px solid #ccc;
+  border-collapse: collapse;
+  -moz-border-radius:5px;
+  -webkit-border-radius:5px;
+  -moz-box-shadow: 0 0 15px #666;
+  -webkit-box-shadow: 0 0 15px #666;	
+
+	
+}
+
+.tablaFiltro td, .tablaFiltro th {	border: solid 1px silver; color:#666; padding:3px 5px 3px 5px}
+.tablaFiltro th { background-color:#333; color:#fff; font-size:0.85em }
+.tablaFiltro a {	color:gray; }
+.filtering { background-color:light-gray}
+#jqtf_filters {
+	list-style:none;
+	
+	}
+#jqtf_filters li {
+	display:inline-block; 
+	position:relative; 
+	float:left;
+	margin-bottom:20px
+}
+
+/* error message */
+.error {
+  /* supply height to ensure consistent positioning for every browser */
+  height:15px;
+  background-color:#FFFE36;
+  border:1px solid #E1E16D;
+  font-size:11px;
+  color:#000;
+  padding:3px 10px;
+  margin-left:-2px;
+ 
+
+  /* CSS3 spicing for mozilla and webkit */
+  -moz-border-radius:4px;
+  -webkit-border-radius:4px;
+  -moz-border-radius-bottomleft:0;
+  -moz-border-radius-topleft:0;
+  -webkit-border-bottom-left-radius:0;
+  -webkit-border-top-left-radius:0;
+ 
+  -moz-box-shadow:0 0 6px #ddd;
+  -webkit-box-shadow:0 0 6px #ddd;
+}
+
+h3.bg {
+    background: url("../images/astgrpctrlbg.gif") repeat-x scroll 0 0 transparent;
+    display: block;
+    height: 39px;
+    line-height: 39px;
+    margin: 0;
+    padding-left: 16px;
+    text-align: left;
+}
+
+h4.bg {
+    background: url("../images/astgrpctrlbg.gif") repeat-x scroll 0 0 transparent;
+    display: block;
+    height: 23px;
+    line-height: 23px;
+    margin: 0;
+    padding-left: 16px;
+    text-align: left;
+}
+
+.cntast {
+	border: 1px #d3d3d3 solid;
+}

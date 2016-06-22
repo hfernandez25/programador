@@ -1,0 +1,70 @@
+<html>
+    <head>
+        <style type="text/css">
+            table th{ text-align:center; font-size: 0.85em;}
+            table td{ text-align:center; font-size: 0.7em;}
+        </style>
+    </head>
+    <body onload="window.print();">
+        <div style="text-align: center;">
+            <table border="1" style="text-align: center; margin: 0 auto; width: 1100px;">
+                  <thead>                                    
+                     <tr>
+                          <th colspan="11" style="font-size: 1.4em; border: 0px solid #000000;"> {{empresa.empnombre | title | trim}} </th>                                           
+                    </tr> 
+                    <tr>
+                          <th colspan="11" style="font-size: 1em; border: 0px solid #000000;"> {{empresa.empnit}} </th>                                           
+                    </tr> 
+                    <tr> 
+                        <td colspan="11" style="font-size: 0.95em; border: 0px solid #000000;"> ORDEN DE PRODUCCION MEDICAMENTOS ESTERILES CAM  </td> 
+                    </tr> 
+                    <tr> 
+                        <td colspan="11" style="font-size: 0.75em; border: 0px solid #000000;"> <br> </td> 
+                    </tr> 
+                    <tr> 
+                        <td colspan="11" style=" border: 0px solid #000000;"> 
+                            <table style="text-align: left; font-size: 1.6em; border: 0px solid #000000;">
+                                <tr> 
+                                    <td style="text-align: left;"> FECHA: </td> 
+                                    <td style="text-align: left; margin: 0 auto; width: 240px;"> {{OrdenProduccion[0].fecha | date('d/m/Y')}} </td> 
+                                    <td style="text-align: left;"> ORDEN DE PRODUCCIÓN:</td> 
+                                    <td style="text-align: left; margin: 0 auto; width: 240px;"> {{OrdenProduccion[0].ordenproduccion }} </td>
+                                    <td style="text-align: left;"> Q.F: </td> 
+                                    <td style="text-align: left;"> {{OrdenProduccion[0].qf }} </td> 
+                                </tr>
+                            </table>
+                        </td> 
+                    </tr>
+                    <tr> 
+                        <td > MEDICAMENTO </td> 
+                        <td > CANTIDAD </td> 
+                        <td > LOTE </td>
+                        <td > FECHA VENCIMIENTO </td>
+                        <td > PRESENTACIÓN </td> 
+                        <td > CONCENTRACIÓN </td> 
+                        <td > RECONSTITUIR CON </td> 
+                        <td > VOLUMEN RECONSTITUCIÓN </td>
+                        <td > VEHICULO DILUCIÓN </td>
+                        <td > VOLUMEN DILUCIÓN </td>
+                        <td > ALMACENAR </td>
+                    </tr>
+                      {% for det in detalle %}
+                        <tr>
+                            <td> {{det.nombre }}</td>
+                            <td> {{det.cantidad }} </td>
+                            <td> {{det.lote }} </td>
+                            <td> {{det.fechavencimiento | date('d/m/Y')}} </td>
+                            <td> {{det.presentacion }} </td>
+                            <td> {{det.concentacion}} </td>
+                            <td> {{det.vehreconstitucion }} </td>
+                            <td> {{det.volreconstitucion}} </td>
+                            <td> {{det.vehdilucion }} </td>
+                            <td> {{det.volvehdilucion }} </td>
+                            <td> {{det.condalmacenamiento }} </td>
+                        </tr>
+                    {% endfor %}
+                </thead>
+            </table>
+        </div>
+    </body> 
+</html>

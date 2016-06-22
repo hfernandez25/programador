@@ -1,0 +1,125 @@
+<html>
+    <head>
+        <style type="text/css">
+            table th{ text-align:center; font-size: 0.85em;}
+            table td{ text-align:center; font-size: 0.7em;}
+        </style>
+    </head>
+    <body onload="window.print();">
+        <div style="text-align: center;">
+            <table border="1" style="text-align: center; margin: 0 auto; width: 1100px;">
+                  <thead>                                    
+                     <tr>
+                          <th colspan="25" style="font-size: 1.4em; border: 0px solid #000000;"> {{empresa.empnombre | title | trim}} </th>                                           
+                    </tr> 
+                    <tr>
+                          <th colspan="25" style="font-size: 1em; border: 0px solid #000000;"> {{empresa.empnit}} </th>                                           
+                    </tr> 
+                    <tr> 
+                        <td colspan="25" style="font-size: 0.95em; border: 0px solid #000000;"> CONTROL DE CALIDAD PRODUCTO TERMINADO  CAM  </td> 
+                    </tr> 
+                    <tr> 
+                        <td colspan="25" style="font-size: 0.75em; border: 0px solid #000000;"> <br> </td> 
+                    </tr> 
+                    <tr> 
+                        <td colspan="25" style=" border: 0px solid #000000;"> 
+                            <table style="text-align: left; font-size: 1.6em;">
+                                <tr> 
+                                    <td style="text-align: left;"> FECHA: </td> 
+                                    <td style="text-align: left; margin: 0 auto; width: 240px;"> {{OrdenProduccion[0].fecha | date('d/m/Y')}} </td> 
+                                    <td style="text-align: left;"> ORDEN DE PRODUCCIÓN:</td> 
+                                    <td style="text-align: left; margin: 0 auto; width: 240px;"> {{OrdenProduccion[0].ordenproduccion }} </td>
+                                    <td style="text-align: left;"> Q.F: </td> 
+                                    <td style="text-align: left;"> Elizabeth Santamaria Hurtado </td> 
+                                </tr>
+                            </table>
+                        </td> 
+                    </tr> 
+                    <tr> 
+                        <td rowspan="2"> MEDICAMENTO </td> 
+                        <td rowspan="2"> DÓSIS </td> 
+                        <td rowspan="2"> VOLUMEN </td>
+                        <td rowspan="2"> VIA ADMON </td>
+                        <td rowspan="2"> FECHA DE VENCIMIENTO </td> 
+                        <td rowspan="2"> VEHÍCULO </td> 
+                        <td rowspan="2"> LOTE </td> 
+                        <td  colspan="3"> NÚMERO DE MAGISTRALES </td>
+                        <td  colspan="3"> ROTULACIÓN CORRECTA </td>
+                        <td  colspan="3"> AUSENCIA PARTÍCULAS EXTRAÑAS </td>
+                        <td  colspan="3"> COLOR CARACTERÍSTICO </td>
+                        <td  colspan="3"> AUSENCIA DE FUGAS </td>
+                        <td  colspan="3"> ACONDICIONAMIENTO CORRECTO </td>
+                    </tr>
+                    <tr> 
+                        <td > # </td>
+                        <td > C </td>
+                        <td > CN </td>
+                        <td > C </td>
+                        <td > NC </td>
+                        <td > N/A </td>
+                        <td > C </td>
+                        <td > NC </td>
+                        <td > N/A </td>
+                        <td > C </td>
+                        <td > NC </td>
+                        <td > N/A </td>
+                        <td > C </td>
+                        <td > NC </td>
+                        <td > N/A </td>
+                        <td > C </td>
+                        <td > NC </td>
+                        <td > N/A </td>
+                    </tr>
+                     {% for det in detalle %}
+                        <tr>
+                            <td> {{det.nombre }}</td>
+                            <td> {{det.presentacion }} </td>
+                            <td> {{det.volvehdilucion }} </td>
+                            <td> VI </td>
+                            <td> {{det.fechavencimiento | date('d/m/Y')}} </td>
+                            <td> {{det.vehdilucion }} </td>
+                            <td> {{det.lote}} </td>
+                            <td> {{det.cantidad }} </td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
+                        </tr>
+                    {% endfor %}
+                </thead>
+            </table>
+            <table border="0" style="text-align: center; margin: 0 auto; width: 1100px;"> 
+                <TBODY>
+                    <tr >
+                        <td valign="top" style="border: 0px solid #000000; text-align: left; height:180px; vertical-align:text-top;" >
+                            ETIQUETAS TESTIGO:
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: left; border: 0px solid #000000;">
+                            ___________________________________________
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: left; border: 0px solid #000000;">
+                            Firma Q.F Calidad
+                        </td>
+                    </tr>
+                </TBODY>
+            </table>
+        </div>
+    </body> 
+</html>

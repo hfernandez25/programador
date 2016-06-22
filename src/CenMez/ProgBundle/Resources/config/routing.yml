@@ -1,0 +1,184 @@
+login:
+    pattern:  /
+    defaults: { _controller: ProgBundle:Default:login }
+    
+usuario_login:
+    pattern:  /login
+    defaults: { _controller: ProgBundle:Default:login }
+    
+usuario_login_check:
+    pattern: /login_check
+
+usuario_logout:
+    pattern: /logout
+    defaults: { _controller: ProgBundle:Default:logout }
+    
+index:
+    pattern:  /index/
+    defaults: { _controller: ProgBundle:Default:index }
+    
+
+#RUTAS PARA LA CREACIÓN DE USUARIOS
+registro_usuarios:
+    pattern: /seguridad/usuario/registroUsuarios
+    defaults: { _controller: ProgBundle:seguridad:registroUsuarios }
+    
+insercion_usuarios:
+    pattern: /seguridad/usuario/dmlUsuarios
+    defaults: { _controller: ProgBundle:seguridad:dmlUsuarios }
+    
+#all_usuarios_flexigrid:
+#    pattern: /seguridad/usuario/allUsuarios
+#    defaults: { _controller: siagBundle:seguridad:allUsuarios }
+#    
+#usuarios_por_id:
+#    pattern: /seguridad/usuario/consultaUsuarioId
+#    defaults: { _controller: siagBundle:seguridad:consultaUsuarioId }
+#
+#exportar_excel_usuarios:
+#    pattern: /seguridad/usuario/exportarExcelUsuarios
+#    defaults: { _controller: siagBundle:seguridad:exportarExcelUsuarios }
+
+
+
+#
+#RUTAS PARA LOS AUTOCOMPLETE
+#
+autocomplete_trabajadores_todos:
+    pattern:  /autocomplete/trabajadoresdos
+    defaults: { _controller: ProgBundle:Autocomplete:Trabajadores }
+    
+autocomplete_medicamentos_detalle:
+    pattern:  /autocomplete/medicamentosFull
+    defaults: { _controller: ProgBundle:Autocomplete:medicamentosFull }
+    
+autocomplete_materia_prima:
+    pattern:  /autocomplete/materiaPrimaFull
+    defaults: { _controller: ProgBundle:Autocomplete:materiaPrimaFull }
+    
+    
+#
+#RUTAS PARA LOS COMBOS
+#   
+estado_registro:
+    pattern:  /combos/estadoRegistro
+    defaults: { _controller: ProgBundle:Combos:estadoRegistro }
+    
+Grupo_Usuarios:
+    pattern:  /combos/GrupoUsuarios
+    defaults: { _controller: ProgBundle:Combos:GrupoUsuarios }
+    
+unidades_de_medida:
+    pattern:  /combos/UnidadesDeMedida
+    defaults: { _controller: ProgBundle:Combos:UnidadesDeMedida }
+    
+    
+    
+
+#
+#RUTAS LA CREACIÓN DE LA ORDEN DE PRODUCCIÓN DE LOS MAGISTRALES
+#
+orden_produccion:
+    pattern:  /operacional/OrdenProduccion/magistralesIndex
+    defaults: { _controller: ProgBundle:OrdenesProduccion:magistralesIndex }
+   
+orden_produccion_insert:
+    pattern:  /operacional/OrdenProduccion/insertOrdenProduccionMagistral
+    defaults: { _controller: ProgBundle:OrdenesProduccion:insertOrdenProduccionMagistral }
+    
+all_orden_produccion_magistrales_flexigrid:
+    pattern:  /operacional/OrdenProduccion/allOrdenesProduccionMagistrales
+    defaults: { _controller: ProgBundle:OrdenesProduccion:allOrdenesProduccionMagistrales }
+    
+consulta_orden_produccion_magistrales:
+    pattern:  /operacional/OrdenProduccion/consultaOrdenProduccionMagistrales
+    defaults: { _controller: ProgBundle:OrdenesProduccion:consultaOrdenProduccionMagistrales }
+    
+delect_detalle_orden_produccion_magistral:
+    pattern:  /operacional/OrdenProduccion/delectDetalleOrdenMagistrales
+    defaults: { _controller: ProgBundle:OrdenesProduccion:delectDetalleOrdenMagistrales }
+    
+imprimir_orden_produccion_magistral:
+    pattern:  /operacional/OrdenProduccion/ImprimirOrdenProduccionMagistral
+    defaults: { _controller: ProgBundle:OrdenesProduccion:ImprimirOrdenProduccionMagistral }
+    
+imprimir_alistamiento_orden_magistral:
+    pattern:  /operacional/OrdenProduccion/ImprimirAlistamientoOrdenMagistral
+    defaults: { _controller: ProgBundle:OrdenesProduccion:ImprimirAlistamientoOrdenMagistral }
+    
+imprimir_control_calidad_orden_magistral:
+    pattern:  /operacional/OrdenProduccion/ImprimirControlCalisdadOrdenMagistral
+    defaults: { _controller: ProgBundle:OrdenesProduccion:ImprimirControlCalisdadOrdenMagistral }
+    
+    
+##RUTAS PARA MAESTROS DE LA TABLA DE MATERIAS PRIMAS
+maestro_materias_primas:
+    pattern:  /maestros/MateriasPrimas/MateriasPrimasIndex
+    defaults: { _controller: ProgBundle:MaestrosMateriasPrimas:MateriasPrimasIndex }
+    
+all_materias_primas_flexigrid:
+    pattern:  /maestros/MateriasPrimas/allMateriasPrimas
+    defaults: { _controller: ProgBundle:MaestrosMateriasPrimas:allMateriasPrimas }
+
+consulta_materias_primas_id:
+    pattern:  /maestros/MateriasPrimas/consultaMateriaPrimaId
+    defaults: { _controller: ProgBundle:MaestrosMateriasPrimas:consultaMateriaPrimaId }
+
+dml_materias_primas:
+    pattern:  /maestros/MateriasPrimas/dmlMateriaPrima
+    defaults: { _controller: ProgBundle:MaestrosMateriasPrimas:dmlMateriaPrima }
+    
+    
+##RUTAS PARA MAESTROS DE LA TABLA DE MEDICAMENTOS
+maestro_medicamentos:
+    pattern:  /maestros/Medicamentos/MedicamentosIndex
+    defaults: { _controller: ProgBundle:MaestrosMedicamentos:MedicamentosIndex }
+    
+all_medicamentos_flexigrid:
+    pattern:  /maestros/Medicamentos/allMedicamentos
+    defaults: { _controller: ProgBundle:MaestrosMedicamentos:allMedicamentos }
+
+consulta_medicamento_id:
+    pattern:  /maestros/Medicamentos/consultaMedicamentoId
+    defaults: { _controller: ProgBundle:MaestrosMedicamentos:consultaMedicamentoId }
+
+dml_medicamentos:
+    pattern:  /maestros/Medicamentos/dmlMedicamentos
+    defaults: { _controller: ProgBundle:MaestrosMedicamentos:dmlMedicamentos }
+    
+    
+##RUTAS PARA MAESTROS DE LA TABLA DE MEDICAMENTOS
+maestro_requerimientos_produccion:
+    pattern:  /maestros/RequerimientosProduccion/RequerimientosProduccionIndex
+    defaults: { _controller: ProgBundle:RequerimientosProduccion:RequerimientosProduccionIndex }
+    
+all_requerimientos_produccion_flexigrid:
+    pattern:  /maestros/RequerimientosProduccion/allRequerimientosProduccion
+    defaults: { _controller: ProgBundle:RequerimientosProduccion:allRequerimientosProduccion }
+
+find_requerimientos_produccion_id:
+    pattern:  /maestros/RequerimientosProduccion/findRequerimientosProduccion
+    defaults: { _controller: ProgBundle:RequerimientosProduccion:findRequerimientosProduccion }
+
+dml_requerimientos_produccion:
+    pattern:  /maestros/RequerimientosProduccion/dmlRequerimientosProduccion
+    defaults: { _controller: ProgBundle:RequerimientosProduccion:dmlRequerimientosProduccion }
+    
+    
+delect_requerimientos_produccion:
+    pattern:  /maestros/RequerimientosProduccion/delectRequerimientoProduccion
+    defaults: { _controller: ProgBundle:RequerimientosProduccion:delectRequerimientoProduccion }
+    
+
+##CONSULTA DE CANTIDAD DE MATERIA PRIMA UTILIZADA
+informe_materia_prima_utilizada:
+    pattern:  /informes/MateriasPrimas/ConsumoMateriaPrima
+    defaults: { _controller: ProgBundle:InformesMateriasPrimas:ConsumoMateriaPrima }
+    
+informe_materia_prima_utilizada_lista:
+    pattern:  /informes/MateriasPrimas/ConsumoMateriaPrimaLista
+    defaults: { _controller: ProgBundle:InformesMateriasPrimas:ConsumoMateriaPrimaLista }
+    
+informe_materia_prima_utilizada_exportar:
+    pattern:   /informes/MateriasPrimas/ConsumoMateriaPrimaExportar
+    defaults: { _controller: ProgBundle:InformesMateriasPrimas:ConsumoMateriaPrimaExportar }

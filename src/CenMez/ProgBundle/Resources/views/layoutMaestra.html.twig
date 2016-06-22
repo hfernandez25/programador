@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="Content-Language" content="es">
+        <title>{% block title %}{% endblock %} - Sigaind</title>
+        <link rel="icon" sizes="16x16" href="{{ asset('favicon.ico') }}" />
+        
+        {{ render_esi(controller('siagBundle:Default:archivosjs'))}}
+        
+        {% block head %}
+
+       {% endblock %}
+    </head>
+    <body>
+        <div id="wrapper">                                
+                <div class="content" style="text-align: center">
+                    <table >                        
+                        <tr>
+                           <td width="1040px">
+                               {{ render_esi(controller('siagBundle:Default:menu')) }}
+                          </td>
+                          <td style="text-align: right" width="40px">
+                              <div id="loading" style="display: none">
+                                  <img src="{{ asset('bundles/sigaind/images/loader.gif') }}" alt="Cargando.." />
+                              </div>
+                          </td>
+                          <td  style="text-align: right">
+                              <a class="menulink" href="{{ path('index') }}">
+                                <img src="{{ asset('bundles/sigaind/images/logo_medium.png') }}" alt="Sigaind" />
+                              </a>
+                          </td>                          
+                      </tr>
+
+                    </table>                        
+                </div>
+            Bienvenido: {{ render_esi(controller('siagBundle:Default:UsuarioLogueado', { 'max': 5 }))}}
+            <div class="content" >
+                <form name="forma" id="forma">
+                    <table height="430px">
+                        <tr>
+                            <td style="vertical-align: top">
+                                <div id="cuerpo" >
+                                {% block content %}
+                                         
+                                {% endblock %}
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+        </div>
+        
+        <div class="content" id="pie" style="text-align: center">
+            © Copyright 2010 SIGAIND
+        </div>    
+    <script type="text/javascript">
+        var menu=new menu.dd("menu");
+        menu.init("menu","menuhover");
+    </script>
+    </body>
+</html>

@@ -1,0 +1,114 @@
+{% extends 'ProgBundle::layoutDashboard.html.twig' %}
+
+{% block title %}Maestro Requerimientos Producción{% endblock %}
+
+{% block head %}
+<link href="{{ asset('bundles/CenMez/js/jquery/themes/base/jquery.ui.theme.css') }}" rel="stylesheet" type="text/css" />
+<link href="{{ asset('bundles/CenMez/js/jquery/themes/base/jquery.ui.autocomplete.css') }}" rel="stylesheet" type="text/css" />
+<link href="{{ asset('bundles/CenMez/js/jquery/themes/base/jquery.ui.datepicker.css') }}" rel="stylesheet" type="text/css" />
+<link href="{{ asset('bundles/CenMez/css/flexigrid/flexigrid.css') }}" rel="stylesheet" type="text/css" />
+<link href="{{ asset('bundles/CenMez/css/colorbox.css') }}" rel="stylesheet" type="text/css" />
+
+<script src="{{ asset('bundles/CenMez/js/jquery/jquery.validate.js') }}" type="text/javascript"></script>
+<script src="{{ asset('bundles/CenMez/js/flexigrid/flexigridNormal.js') }}" type="text/javascript"></script>
+<script src="{{ asset('bundles/CenMez/js/Operacionales/RequerimientosProduccion/RequerimientosProduccion.js') }}" type="text/javascript"></script>
+<script type="text/javascript">
+ $(document).ready(function()
+ {                              
+        inicio(); 
+        listado();
+  });
+</script>
+
+<style>
+    .ui-autocomplete-loading {
+        background: white url('{{ asset('bundles/CenMez/images/loader.gif') }}') right center no-repeat;
+    }
+	
+    .flexigrid div.fbutton .add
+    {
+        background: url({{ asset('bundles/CenMez/css/images/add.png') }}) no-repeat center left;
+    }	
+
+    .flexigrid div.fbutton .delete
+    {
+        background: url({{ asset('bundles/CenMez/css/images/close.png') }}) no-repeat center left;
+    }
+    .flexigrid div.fbutton .dup
+    {
+        background: url({{ asset('bundles/CenMez/images/application.gif') }}) no-repeat center left;
+    }
+
+</style>
+{% endblock %}
+    
+{% block content %}
+<input type="hidden" id="imgeliminar" value="{{ asset('bundles/CenMez/images/eliminar.gif') }}">
+<input type="hidden" id="imgeAgregar" value="{{ asset('bundles/CenMez/images/agregar.gif') }}">
+
+<div id="divForm" align="left" class="row">
+  <div class="col-lg-12">
+        <div class="table-responsive">
+            <table id="tblRegistros" style="display:none"></table>
+        </div>
+    </div>
+</div>
+
+<!--FORMULARIO PARA CREAR LAS ORDENES -->
+
+<div id="formulario" style="display: none">
+    <div class="row">
+        <div class="col-lg-8">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <strong id="tituloFormulario">NUEVA PROGRAMACIÓN</strong>
+                </div>
+                <div class="row">
+                    <div class="col-lg-10">
+                        <div class="panel-body">
+                            <div class="form-group">
+                                <label class="col-lg-4 control-label">Medicamento:</label>
+                                <div class="col-lg-8">
+                                    <input type="text" class="form-control" id="medId" name="0" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <div class="table-responsive">
+                        <table id='demotable2' class="table table-bordered table-striped tablaFiltro" > 
+                            <thead>
+                                <tr class="active">
+                                    <th style="width: 60px;"> MATERIA PRIMA</th>
+                                    <th style="width: 60px;"> CANT REQUERIDA</th>
+                                    <th style="width: 60px;"> UNIDAD</th>
+                                    <th id="tdAgregar">New</th>
+                                    <th id="tdEliminar"> Elim </th>
+                                </tr>
+                            </thead>
+                            <tbody id="tblLabores">
+
+                            </tbody>   
+                        </table>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    {% if permisos[0].escritura == 1 or permisos[0].update == 1%}
+                        <button id="btnInsertar" class="btn btn-primary btn-sm" type="button" onclick="guardarRegistro()">Guardar</button>
+                    {% endif %}
+                    <button type="button" class="btn btn-primary btn-sm" onclick="Cancelar();">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="do">
+    <input type="hidden" id="id" value="0" name="id"/>
+    <input type="hidden" id="l" name="l" value="{{permisos[0].lectura}}"/>
+    <input type="hidden" id="e" name="e" value="{{permisos[0].escritura}}"/>
+    <input type="hidden" id="u" name="u" value="{{permisos[0].update}}"/>
+    <input type="hidden" id="d" name="d" value="{{permisos[0].delete}}"/>
+    <input type="hidden" id="f" name="f" value="{{f1}}"/>
+</div>
+{% endblock %}

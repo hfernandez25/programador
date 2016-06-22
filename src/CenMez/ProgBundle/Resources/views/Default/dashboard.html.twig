@@ -1,0 +1,58 @@
+{% extends 'ProgBundle::layoutDashboard.html.twig' %}
+
+{% block title %}Bienvenido{% endblock %}
+
+{% block head %}
+
+    <!-- External lib: C3 and D3 -->
+    <link rel="stylesheet" type="text/css" href="{{ asset('bundles/CenMez/c3/c3.min.css') }}" />
+    <script src="{{ asset('bundles/CenMez/c3/c3.min.js') }}" type="text/javascript"></script>
+    
+    <script src="{{ asset('bundles/CenMez/js/dashboard/Dashboard.js') }}" type="text/javascript"></script>
+    <script type="text/javascript">
+    $(document).ready(function() {
+        inicio();
+    });
+    </script>
+    
+    <style>
+        div.olMap
+        {
+          cursor: default;
+          height: 300px;
+          margin: 0 !important;
+          padding: 0 !important;
+          width: 100%;
+          z-index: 0;
+        }
+    </style>
+{% endblock %}
+
+
+{% block content %}
+        <div class="row">
+            <div class="col-lg-12">
+                <h3 class="page-header"></h3>
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+            
+            <!-- INICIO AREA DE GRAFICOS -->
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <i class="fa fa-bar-chart-o fa-fw"></i> Producción Magistrales
+                        <div class="pull-right">
+                        </div>
+                    </div>
+                    <!-- /.panel-heading -->
+                    <div class="panel-body">
+                        <div id="chartProduccion"></div>
+                    </div>
+                    <!-- /.panel-body -->
+                </div>
+            </div>
+        </div>
+        <!-- FIN AREA DE GRAFICOS -->
+{% endblock %}

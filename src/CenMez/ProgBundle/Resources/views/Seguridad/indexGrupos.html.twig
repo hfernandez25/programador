@@ -1,0 +1,293 @@
+{% extends 'siagBundle::layoutDashboard.html.twig' %}
+
+{% block title %}Administrar Grupos{% endblock %}
+
+{% block head %}
+
+<link href="{{ asset('bundles/sonatajquery/themes/base/jquery.ui.theme.css') }}" rel="stylesheet" type="text/css" />
+<link href="{{ asset('bundles/sonatajquery/themes/base/jquery.ui.autocomplete.css') }}" rel="stylesheet" type="text/css" />
+<link href="{{ asset('bundles/sigaind/css/flexigrid/flexigrid.css') }}" rel="stylesheet" type="text/css" />
+<link href="{{ asset('bundles/sonatajquery/themes/base/jquery.ui.tabs.css') }}" rel="stylesheet" type="text/css" />
+
+<script src="{{ asset('bundles/sigaind/js/jquery/jquery.validate.js') }}" type="text/javascript"></script>
+<script src="{{ asset('bundles/sigaind/js/flexigrid/flexigridNormal.js') }}" type="text/javascript"></script>
+<script src="{{ asset('bundles/sigaind/js/seguridad/administrarGrupos.js') }}" type="text/javascript"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        inicio();
+        listadoGrupos();
+    });
+</script>
+<style>
+    #tabs { border: none; }
+            .ui-widget-header{ background: none; border: none; }
+            
+    .ui-autocomplete-loading {
+        background: white url('{{ asset('bundles/sigaind/images/loader.gif') }}') right center no-repeat;
+    }
+	
+    .flexigrid div.fbutton .add
+    {
+        background: url({{ asset('bundles/sigaind/css/images/add.png') }}) no-repeat center left;
+    }	
+
+    .flexigrid div.fbutton .delete
+    {
+        background: url({{ asset('bundles/sigaind/css/images/close.png') }}) no-repeat center left;
+    }
+    .flexigrid div.fbutton .export
+    {
+        background: url({{ asset('bundles/sigaind/images/Excel.bmp') }}) no-repeat center left;
+    }
+</style>
+{% endblock %}
+
+
+{% block content %}
+
+<div id="divForm" align="left" class="row">
+    <div class="col-lg-12">
+        <div class="table-responsive">
+            <table id="tblGrupos" style="display:none"></table>
+        </div>
+    </div>
+</div>
+
+<form class="form-horizontal" role="form" id="forma">
+    <div id="formulario" style="display:none;">
+        <div class="row">
+            <div class="col-lg-5">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <strong id="titulo">NUEVO GRUPO</strong>
+                    </div>
+                    <div class="panel-body">
+                        <div class="form-group">
+                            <label class="col-lg-4 control-label">Nombre Grupo:</label>
+                            <div class="col-lg-8"> 
+                                <input type="text" class="form-control" id="nmGrupo" name="nmGrupo" minlength="1" maxlength="40" required>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-9">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <button type="button" onclick="guardarGrupo();" class="btn btn-success submit-button">Guardar</button>
+                        <button type="button" onclick="Cancelar();" class="btn btn-default">Cancelar</button>
+                    </div>
+                    <ul id="myTab" class="nav nav-tabs">
+                        <li class="active"><a href="#tabs-1" data-toggle="tab">Maestros</a></li>
+                        <li class=""><a href="#tabs-2" data-toggle="tab">Operacionales</a></li>
+                        <li class=""><a href="#tabs-3" data-toggle="tab">Informes</a></li>
+                        <li class=""><a href="#tabs-4" data-toggle="tab">Sistema Geogr&aacute;fico</a></li>
+                        <li class=""><a href="#tabs-5" data-toggle="tab">Sistema M&oacute;vil</a></li>
+                        <li class=""><a href="#tabs-6" data-toggle="tab">Grupo Gerencia</a></li>
+                    </ul>
+                    <div id="myTabContent" class="tab-content">
+                        <div class="tab-pane fade active in" id="tabs-1">
+                            <div class="table-responsive">
+                                <table id='demotable1' class="table table-bordered tablaFiltro table-hover">
+                                    <thead>
+                                        <tr class="active">
+                                            <th colspan="2"> MAESTROS </th>
+                                            <th colspan="4"> Permisos </th>
+                                        </tr>
+                                        <tr class="active">
+                                            <th> Módulo </th>
+                                            <th> Sub-Módulo </th>
+                                            <th> Leer </th>
+                                            <th> Escribir </th>
+                                            <th> Actualizar </th>
+                                            <th> Borrar </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="tblMaestros">
+                                    {% for m in maestros %}
+                                        <tr id="{{m.modid }}">
+                                            <td> {{m.ruta }} </td>           
+                                            <td> {{m.modnombre }} </td>                    
+                                            <td> <input type="checkbox" id="L_{{m.modid}}" > </td>
+                                            <td> <input type="checkbox" id="E_{{m.modid}}" > </td>
+                                            <td> <input type="checkbox" id="A_{{m.modid}}" > </td>
+                                            <td> <input type="checkbox" id="B_{{m.modid}}" > </td>
+                                        </tr>
+                                   {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade active in" id="tabs-2">
+                            <div class="table-responsive">
+                                <table id='demotable2' class="table table-bordered tablaFiltro table-hover">
+                                    <thead>
+                                        <tr class="active">
+                                            <th colspan="2"> OPERACIONALES </th>
+                                            <th colspan="4"> Permisos </th>
+                                        </tr>
+                                        <tr class="active">
+                                            <th> Módulo </th>
+                                            <th> Sub-Módulo </th>
+                                            <th> Leer </th>
+                                            <th> Escribir </th>
+                                            <th> Actualizar </th>
+                                            <th> Borrar </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="tblOperacional">
+                                    {% for p in operacional %}
+                                        <tr id="{{p.modid }}">
+                                            <td> {{p.ruta }} </td>           
+                                            <td> {{p.modnombre }} </td>                    
+                                            <td> <input type="checkbox" id="L_{{p.modid}}" > </td>
+                                            <td> <input type="checkbox" id="E_{{p.modid}}" > </td>
+                                            <td> <input type="checkbox" id="A_{{p.modid}}" > </td>
+                                            <td> <input type="checkbox" id="B_{{p.modid}}" > </td>
+                                        </tr>
+                                   {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade active in" id="tabs-3">
+                            <div class="table-responsive">
+                                <table id='demotable2' class="table table-bordered tablaFiltro table-hover">
+                                    <thead>
+                                        <tr class="active">
+                                            <th colspan="2"> INFORMES </th>
+                                            <th colspan="4"> Permisos </th>
+                                        </tr>
+                                        <tr class="active">
+                                            <th> Módulo </th>
+                                            <th> Sub-Módulo </th>
+                                            <th> Leer </th>
+                                            <th> Escribir </th>
+                                            <th> Actualizar </th>
+                                            <th> Borrar </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="tblInformes">
+                                    {% for i in informes %}
+                                        <tr id="{{i.modid }}">
+                                            <td> {{i.ruta }} </td>           
+                                            <td> {{i.modnombre }} </td>                    
+                                            <td> <input type="checkbox" id="L_{{i.modid}}" > </td>
+                                            <td> <input type="checkbox" id="E_{{i.modid}}" > </td>
+                                            <td> <input type="checkbox" id="A_{{i.modid}}" > </td>
+                                            <td> <input type="checkbox" id="B_{{i.modid}}" > </td>
+                                        </tr>
+                                   {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade active in" id="tabs-4">
+                            <div class="table-responsive">
+                                <table id='demotable2' class="table table-bordered tablaFiltro table-hover">
+                                    <thead>
+                                        <tr class="active">
+                                            <th colspan="2"> SISTEMA GEOGR&Aacute;FICO </th>
+                                            <th colspan="4"> Permisos </th>
+                                        </tr>
+                                        <tr class="active">
+                                            <th> Módulo </th>
+                                            <th> Sub-Módulo </th>
+                                            <th> Leer </th>
+                                            <th> Escribir </th>
+                                            <th> Actualizar </th>
+                                            <th> Borrar </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="tblSig">
+                                    {% for s in sig %}
+                                        <tr id="{{s.modid }}">
+                                            <td> {{s.ruta }} </td>           
+                                            <td> {{s.modnombre }} </td>                    
+                                            <td> <input type="checkbox" id="L_{{s.modid}}" > </td>
+                                            <td> <input type="checkbox" id="E_{{s.modid}}" > </td>
+                                            <td> <input type="checkbox" id="A_{{s.modid}}" > </td>
+                                            <td> <input type="checkbox" id="B_{{s.modid}}" > </td>
+                                        </tr>
+                                   {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade active in" id="tabs-5">
+                            <div class="table-responsive">
+                                <table id='demotable2' class="table table-bordered tablaFiltro table-hover">
+                                    <thead>
+                                        <tr class="active">
+                                            <th colspan="2"> SISTEMA M&Oacute;VIL </th>
+                                            <th colspan="4"> Permisos </th>
+                                        </tr>
+                                        <tr class="active">
+                                            <th> Módulo </th>
+                                            <th> Sub-Módulo </th>
+                                            <th> Leer </th>
+                                            <th> Escribir </th>
+                                            <th> Actualizar </th>
+                                            <th> Borrar </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="tblMovil">
+                                    {% for mv in movil %}
+                                        <tr id="{{mv.modid }}">
+                                            <td> {{mv.ruta }} </td>           
+                                            <td> {{mv.modnombre }} </td>                    
+                                            <td> <input type="checkbox" id="L_{{mv.modid}}" > </td>
+                                            <td> <input type="checkbox" id="E_{{mv.modid}}" > </td>
+                                            <td> <input type="checkbox" id="A_{{mv.modid}}" > </td>
+                                            <td> <input type="checkbox" id="B_{{mv.modid}}" > </td>
+                                        </tr>
+                                    {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade active in" id="tabs-6">
+                            <div class="table-responsive">
+                                <table id='demotable2' class="table table-bordered tablaFiltro table-hover">
+                                    <thead>
+                                        <tr class="active">
+                                            <th colspan="2"> MÓDULO GERENCIAL </th>
+                                            <th colspan="1"> Permisos </th>
+                                        </tr>
+                                        <tr class="active">
+                                            <th colspan="2"> Modulo </th>
+                                            <th> Activar </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="tblGerencia">
+                                    {% for ger in gerencial %}
+                                        <tr id="{{ger.modid }}">
+                                            <td colspan="2"> {{ger.modnombre }} </td>                    
+                                            <td> <input type="checkbox" id="L_{{ger.modid}}" > </td>
+                                        </tr>
+                                   {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="datosOcultos">
+                <input type="hidden" id="usuid" value="0" name="usuid"/>
+                <input type="hidden" id="escritura" name="escritura" value="{{permisos[0].escritura}}"/>
+                <input type="hidden" id="update" name="update" value="{{permisos[0].update}}"/>
+                <input type="hidden" id="delete" name="delete" value="{{permisos[0].delete}}"/>
+            </div>
+        </div> 
+    </div>
+            
+    <div class="row ">
+        <div class="col-lg-4">
+            <div class="panel panel-default border-bottom">
+
+            </div>
+        </div>
+    </div>
+</form>
+{% endblock %}

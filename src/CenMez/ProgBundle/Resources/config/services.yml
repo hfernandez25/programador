@@ -1,0 +1,7 @@
+parameters:
+#    prog.example.class: CenMez\ProgBundle\Example
+
+services:
+#    prog.example:
+#        class: %prog.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

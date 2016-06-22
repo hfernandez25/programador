@@ -1,0 +1,56 @@
+<html>
+    <head>
+        <style type="text/css">
+            table th{ text-align:center; font-size: 0.85em;}
+            table td{ text-align:center; font-size: 0.7em;}
+        </style>
+    </head>
+    <body onload="window.print();">
+        <div style="text-align: center;">
+            <table border="1" style="text-align: center; margin: 0 auto; width: 800px;">
+                  <thead>                                    
+                     <tr>
+                          <th colspan="5" style="font-size: 1.4em; border: 0px solid #000000;"> {{empresa.empnombre | title | trim}} </th>                                           
+                    </tr> 
+                    <tr>
+                          <th colspan="5" style="font-size: 1em; border: 0px solid #000000;"> {{empresa.empnit}} </th>                                           
+                    </tr> 
+                    <tr> 
+                        <td colspan="5" style="font-size: 0.95em; border: 0px solid #000000;"> ALISTAMIENTO MATERIA PRIMA Y MATERIAL DE ACONDICIONAMIENTO CAM  </td> 
+                    </tr> 
+                    <tr> 
+                        <td colspan="5" style="font-size: 0.75em; border: 0px solid #000000;"> <br> </td> 
+                    </tr> 
+                    <tr> 
+                        <td colspan="5" style=" border: 0px solid #000000;"> 
+                            <table style="text-align: left; font-size: 1.6em;">
+                                <tr> 
+                                    <td style="text-align: left;"> FECHA: </td> 
+                                    <td style="text-align: left; margin: 0 auto; width: 240px;"> {{OrdenProduccion[0].fecha | date('d/m/Y')}} </td> 
+                                    <td style="text-align: left;"> ORDEN DE PRODUCCIÓN:</td> 
+                                    <td style="text-align: left; margin: 0 auto; width: 240px;"> {{OrdenProduccion[0].ordenproduccion }} </td>
+                                </tr>
+                            </table>
+                        </td> 
+                    </tr>
+                    <tr> 
+                        <td > MATERIA PRIMA </td> 
+                        <td > LOTE </td>
+                        <td > FECHA VENCIMIENTO </td>
+                        <td > CANTIDAD ENTRADA </td>
+                        <td > CANTIDAD SALIDA </td>
+                    </tr> 
+                      {% for det in detalle %}
+                        <tr>
+                            <td> {{det.nombre }}</td>
+                            <td>   </td>
+                            <td>   </td>
+                            <td> {{det.cantrequerida }} </td>
+                            <td>   </td>
+                        </tr>
+                    {% endfor %}
+                </thead>
+            </table>
+        </div>
+    </body> 
+</html>

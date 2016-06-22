@@ -1,0 +1,40 @@
+<div class="navbar-default sidebar" role="navigation"> 
+    <div class="sidebar-nav navbar-collapse">
+        <ul class="nav" id="side-menu">
+            <li>
+                <a href="{{ path('index') }}"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+            </li>
+            <li>
+                <a href="#"><i class="fa fa-edit fa-fw"></i> Maestros <span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level">
+                    <li><a href="{{ path('maestro_medicamentos') }}" >Medicamentos</a></li>
+                    <li><a href="{{ path('maestro_materias_primas') }}" >Materia Prima</a></li>
+                    <li><a href="{{ path('maestro_requerimientos_produccion') }}" >Requerimientos Producción</a></li>
+                    <li>
+                        <a href="#">Seguridad <span class="fa arrow"></span></a>            
+                        <ul class="nav nav-third-level">                                        
+                            <li><a   href="{{ path('registro_usuarios') }}">Usuarios</a> </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="#"><i class="fa fa-table fa-fw"></i> Operacionales <span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level">
+                    <li><a href="{{ path('orden_produccion') }}" >Orden Producción Magistrales</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Informes <span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level">
+                    <li>
+                        <a href="#">Materias Primas <span class="fa arrow"></span></a>            
+                        <ul class="nav nav-third-level">                                        
+                            <li><a   href="{{ path('informe_materia_prima_utilizada') }}">Consumo Materias Primas</a> </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+   </div>
+</div>

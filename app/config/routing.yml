@@ -1,0 +1,4 @@
+prog:
+    resource: "@ProgBundle/Resources/config/routing.yml"
+    prefix:   /
+

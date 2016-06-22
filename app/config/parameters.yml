@@ -1,0 +1,21 @@
+parameters:
+    database_driver: pdo_mysql
+    database_host: 127.0.0.1
+#    database_host: 190.121.153.116
+    database_port: null
+    database_name: programador
+    database_user: root
+    database_password: sigaind
+    mailer_transport: gmail
+    mailer_host: ~
+    mailer_user: stradibarius75@gmail.com 
+    mailer_password: casa
+    locale: es
+    secret: ddeb33a3bb7d847886d10d250a5fad362
+    database_path: null
+    database_driver2: pdo_mysql
+    database_host2: 127.0.0.1
+    database_port2: null
+    database_name2: programador
+    database_user2: root
+    database_password2: sigaind
